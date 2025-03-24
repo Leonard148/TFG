@@ -1,0 +1,2 @@
+Azure_Kinect_ROS_Driver:motor_control:spi_com:yolov7
+-DCATKIN_DEVEL_PREFIX=/home/jetson/catkin_ws/devel -DCMAKE_INSTALL_PREFIX=/home/jetson/catkin_ws/install -G Unix Makefiles

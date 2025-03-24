@@ -1,0 +1,8 @@
+prefix=/home/jetson/catkin_ws/install
+
+Name: spi_com
+Description: Description of spi_com
+Version: 0.0.1
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 
