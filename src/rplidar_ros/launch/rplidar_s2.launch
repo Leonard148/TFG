@@ -1,0 +1,19 @@
+<launch>
+  <arg name="channel_type" default="serial"/>
+  <arg name="serial_port" default="/dev/ttyUSB0"/>
+  <arg name="serial_baudrate" default="1000000"/>
+  <arg name="frame_id" default="laser"/>
+  <arg name="inverted" default="false"/>
+  <arg name="angle_compensate" default="true"/>
+  <arg name="scan_mode" default="DenseBoost"/>
+
+  <node pkg="rplidar_ros" type="rplidarNode" name="rplidarNode" output="screen" respawn="true">
+    <param name="channel_type" value="$(arg channel_type)" />
+    <param name="serial_port" value="$(arg serial_port)" />
+    <param name="serial_baudrate" value="$(arg serial_baudrate)" />
+    <param name="frame_id" value="$(arg frame_id)" />
+    <param name="inverted" value="$(arg inverted)" />
+    <param name="angle_compensate" value="$(arg angle_compensate)" />
+    <param name="scan_mode" value="$(arg scan_mode)" />
+  </node>
+</launch>

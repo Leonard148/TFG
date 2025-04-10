@@ -1,0 +1,8 @@
+prefix=/home/jetson/catkin_ws/install
+
+Name: depth_movement
+Description: Description of depth_movement
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

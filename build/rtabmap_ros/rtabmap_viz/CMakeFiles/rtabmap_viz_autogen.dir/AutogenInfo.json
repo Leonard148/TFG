@@ -1,0 +1,112 @@
+{
+	"BUILD_DIR" : "/home/jetson/catkin_ws/build/rtabmap_ros/rtabmap_viz/rtabmap_viz_autogen",
+	"CMAKE_BINARY_DIR" : "/home/jetson/catkin_ws/build",
+	"CMAKE_CURRENT_BINARY_DIR" : "/home/jetson/catkin_ws/build/rtabmap_ros/rtabmap_viz",
+	"CMAKE_CURRENT_SOURCE_DIR" : "/home/jetson/catkin_ws/src/rtabmap_ros/rtabmap_viz",
+	"CMAKE_EXECUTABLE" : "/usr/bin/cmake",
+	"CMAKE_SOURCE_DIR" : "/home/jetson/catkin_ws/src",
+	"HEADERS" : 
+	[
+		[
+			"/home/jetson/catkin_ws/src/rtabmap_ros/rtabmap_viz/include/rtabmap_viz/PreferencesDialogROS.h",
+			"MU",
+			"Z2ENHLIGGP/moc_PreferencesDialogROS.cpp"
+		]
+	],
+	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
+	"INCLUDE_DIR" : "/home/jetson/catkin_ws/build/rtabmap_ros/rtabmap_viz/rtabmap_viz_autogen/include",
+	"MOC_COMPILATION_FILE" : "/home/jetson/catkin_ws/build/rtabmap_ros/rtabmap_viz/rtabmap_viz_autogen/mocs_compilation.cpp",
+	"MOC_DEFINITIONS" : 
+	[
+		"DISABLE_LIBUSB_1_0",
+		"DISABLE_PCAP",
+		"DISABLE_PNG",
+		"QT_CORE_LIB",
+		"QT_GUI_LIB",
+		"QT_NO_DEBUG",
+		"QT_OPENGL_LIB",
+		"QT_WIDGETS_LIB",
+		"ROSCONSOLE_BACKEND_LOG4CXX",
+		"ROS_BUILD_SHARED_LIBS=1",
+		"ROS_PACKAGE_NAME=\"rtabmap_viz\""
+	],
+	"MOC_DEPEND_FILTERS" : 
+	[
+		[
+			"Q_PLUGIN_METADATA",
+			"[\n][ \t]*Q_PLUGIN_METADATA[ \t]*\\([^\\)]*FILE[ \t]*\"([^\"]+)\""
+		]
+	],
+	"MOC_INCLUDES" : 
+	[
+		"/home/jetson/catkin_ws/src/rtabmap_ros/rtabmap_viz/include",
+		"/home/jetson/catkin_ws/devel/include",
+		"/home/jetson/catkin_ws/src/rtabmap_ros/rtabmap_sync/include",
+		"/home/jetson/catkin_ws/src/rtabmap_ros/rtabmap_conversions/include",
+		"/opt/ros/noetic/include/xmlrpcpp",
+		"/opt/ros/noetic/include",
+		"/usr/include/opencv4",
+		"/usr/local/include/rtabmap-0.21",
+		"/usr/include/pcl-1.10",
+		"/usr/include/eigen3",
+		"/usr/include/ni",
+		"/usr/include/vtk-7.1",
+		"/usr/include/freetype2",
+		"/usr/include/aarch64-linux-gnu/qt5",
+		"/usr/include/aarch64-linux-gnu/qt5/QtWidgets",
+		"/usr/include/aarch64-linux-gnu/qt5/QtGui",
+		"/usr/include/aarch64-linux-gnu/qt5/QtCore",
+		"/usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++",
+		"/usr/include/aarch64-linux-gnu/qt5/QtOpenGL",
+		"/usr/include/openni2",
+		"/usr/include",
+		"/usr/include/aarch64-linux-gnu",
+		"/usr/include",
+		"/usr/include/c++/8",
+		"/usr/include/aarch64-linux-gnu/c++/8",
+		"/usr/include/c++/8/backward",
+		"/usr/lib/gcc/aarch64-linux-gnu/8/include",
+		"/usr/local/include"
+	],
+	"MOC_MACRO_NAMES" : [ "Q_OBJECT", "Q_GADGET", "Q_NAMESPACE" ],
+	"MOC_OPTIONS" : [],
+	"MOC_PATH_PREFIX" : true,
+	"MOC_PREDEFS_CMD" : 
+	[
+		"/usr/bin/c++",
+		"-dM",
+		"-E",
+		"-c",
+		"/usr/share/cmake-3.16/Modules/CMakeCXXCompilerABI.cpp"
+	],
+	"MOC_PREDEFS_FILE" : "/home/jetson/catkin_ws/build/rtabmap_ros/rtabmap_viz/rtabmap_viz_autogen/moc_predefs.h",
+	"MOC_RELAXED_MODE" : false,
+	"MOC_SKIP" : [],
+	"MULTI_CONFIG" : false,
+	"PARALLEL" : 1,
+	"PARSE_CACHE_FILE" : "/home/jetson/catkin_ws/build/rtabmap_ros/rtabmap_viz/CMakeFiles/rtabmap_viz_autogen.dir/ParseCache.txt",
+	"QT_MOC_EXECUTABLE" : "/usr/lib/qt5/bin/moc",
+	"QT_UIC_EXECUTABLE" : "/usr/lib/qt5/bin/uic",
+	"QT_VERSION_MAJOR" : 5,
+	"SETTINGS_FILE" : "/home/jetson/catkin_ws/build/rtabmap_ros/rtabmap_viz/CMakeFiles/rtabmap_viz_autogen.dir/AutogenUsed.txt",
+	"SOURCES" : 
+	[
+		[
+			"/home/jetson/catkin_ws/src/rtabmap_ros/rtabmap_viz/src/GuiNode.cpp",
+			"MU"
+		],
+		[
+			"/home/jetson/catkin_ws/src/rtabmap_ros/rtabmap_viz/src/GuiWrapper.cpp",
+			"MU"
+		],
+		[
+			"/home/jetson/catkin_ws/src/rtabmap_ros/rtabmap_viz/src/PreferencesDialogROS.cpp",
+			"MU"
+		]
+	],
+	"UIC_OPTIONS" : [],
+	"UIC_SEARCH_PATHS" : [],
+	"UIC_SKIP" : [],
+	"UIC_UI_FILES" : [],
+	"VERBOSITY" : 0
+}
