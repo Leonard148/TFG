@@ -60,7 +60,7 @@ Licensed under the MIT License.
     <param name="queue_size"        value="20"/>    <!-- Increase queue size for better sync -->
   </node>
 
-  <include file="$(find rplidar_ros)/launch/view_rplidar_s2.launch"</>
+  <include file="$(find rplidar_ros)/launch/view_rplidar_s2.launch"/>
 
   <!-- Lanzar RTAB-Map -->
   <include file="$(find rtabmap_ros)/launch/rtabmap.launch" ns="rtabmap">
