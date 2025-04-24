@@ -17,9 +17,9 @@ let GlobalDescriptor = require('./GlobalDescriptor.js');
 let EnvSensor = require('./EnvSensor.js');
 let LandmarkDetection = require('./LandmarkDetection.js');
 let GPS = require('./GPS.js');
-let sensor_msgs = _finder('sensor_msgs');
 let geometry_msgs = _finder('geometry_msgs');
 let std_msgs = _finder('std_msgs');
+let sensor_msgs = _finder('sensor_msgs');
 
 //-----------------------------------------------------------
 

@@ -53,6 +53,6 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/barrier_map" TYPE PROGRAM FILES "/home/jetson/catkin_ws/build/barrier_map/catkin_generated/installspace/semantic_map_visualizer.py")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/barrier_map" TYPE PROGRAM FILES "/home/jetson/catkin_ws/build/barrier_map/catkin_generated/installspace/mapa_simbolico.py")
 endif()
 

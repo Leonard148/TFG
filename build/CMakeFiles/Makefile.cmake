@@ -76,7 +76,7 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/home/jetson/catkin_ws/src/CMakeLists.txt"
   "/home/jetson/catkin_ws/src/barrier_map/CMakeLists.txt"
   "/home/jetson/catkin_ws/src/barrier_map/package.xml"
-  "/home/jetson/catkin_ws/src/barrier_map/scripts/semantic_map_visualizer.py"
+  "/home/jetson/catkin_ws/src/barrier_map/scripts/mapa_simbolico.py"
   "/home/jetson/catkin_ws/src/depth_movement/CMakeLists.txt"
   "/home/jetson/catkin_ws/src/depth_movement/package.xml"
   "/home/jetson/catkin_ws/src/depth_movement/src/move_robot.py"
