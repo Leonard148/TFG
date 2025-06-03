@@ -124,7 +124,7 @@ azure_kinect_ros_driver_nodelet_EXTERNAL_OBJECTS =
 /home/jetson/catkin_ws/devel/lib/libazure_kinect_ros_driver_nodelet.so: Azure_Kinect_ROS_Driver/CMakeFiles/azure_kinect_ros_driver_nodelet.dir/src/k4a_ros_device_params.cpp.o
 /home/jetson/catkin_ws/devel/lib/libazure_kinect_ros_driver_nodelet.so: Azure_Kinect_ROS_Driver/CMakeFiles/azure_kinect_ros_driver_nodelet.dir/src/k4a_calibration_transform_data.cpp.o
 /home/jetson/catkin_ws/devel/lib/libazure_kinect_ros_driver_nodelet.so: Azure_Kinect_ROS_Driver/CMakeFiles/azure_kinect_ros_driver_nodelet.dir/build.make
-/home/jetson/catkin_ws/devel/lib/libazure_kinect_ros_driver_nodelet.so: /usr/local/lib/libk4arecord.so.1.4.0
+/home/jetson/catkin_ws/devel/lib/libazure_kinect_ros_driver_nodelet.so: /usr/lib/aarch64-linux-gnu/libk4arecord.so.1.4.2
 /home/jetson/catkin_ws/devel/lib/libazure_kinect_ros_driver_nodelet.so: /opt/ros/noetic/lib/libimage_transport.so
 /home/jetson/catkin_ws/devel/lib/libazure_kinect_ros_driver_nodelet.so: /opt/ros/noetic/lib/libimage_geometry.so
 /home/jetson/catkin_ws/devel/lib/libazure_kinect_ros_driver_nodelet.so: /usr/lib/liborocos-kdl.so
@@ -251,7 +251,7 @@ azure_kinect_ros_driver_nodelet_EXTERNAL_OBJECTS =
 /home/jetson/catkin_ws/devel/lib/libazure_kinect_ros_driver_nodelet.so: /usr/lib/aarch64-linux-gnu/libopencv_xfeatures2d.so.4.8.0
 /home/jetson/catkin_ws/devel/lib/libazure_kinect_ros_driver_nodelet.so: /usr/lib/aarch64-linux-gnu/libopencv_xobjdetect.so.4.8.0
 /home/jetson/catkin_ws/devel/lib/libazure_kinect_ros_driver_nodelet.so: /usr/lib/aarch64-linux-gnu/libopencv_xphoto.so.4.8.0
-/home/jetson/catkin_ws/devel/lib/libazure_kinect_ros_driver_nodelet.so: /usr/local/lib/libk4a.so.1.4.0
+/home/jetson/catkin_ws/devel/lib/libazure_kinect_ros_driver_nodelet.so: /usr/lib/aarch64-linux-gnu/libk4a.so.1.4.2
 /home/jetson/catkin_ws/devel/lib/libazure_kinect_ros_driver_nodelet.so: /usr/lib/aarch64-linux-gnu/libopencv_shape.so.4.8.0
 /home/jetson/catkin_ws/devel/lib/libazure_kinect_ros_driver_nodelet.so: /usr/lib/aarch64-linux-gnu/libopencv_highgui.so.4.8.0
 /home/jetson/catkin_ws/devel/lib/libazure_kinect_ros_driver_nodelet.so: /usr/lib/aarch64-linux-gnu/libopencv_datasets.so.4.8.0
