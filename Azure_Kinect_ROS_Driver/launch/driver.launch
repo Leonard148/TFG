@@ -1,0 +1,121 @@
+<!--
+Copyright (c) Microsoft Corporation. All rights reserved.
+Licensed under the MIT License.
+-->
+
+<launch>
+  <arg name="tf_prefix"         default="" />                       <!-- Prefix added to tf frame IDs. It typically contains a trailing '_' unless empty. -->
+  <arg name="overwrite_robot_description" default="true" />         <!-- Flag to publish a standalone azure_description instead of the default robot_descrition parameter-->
+  <arg name="nodelet_manager"   default="manager" />                <!-- Name of the nodelet manager -->
+  <arg name="num_worker_threads" default="16" />                    <!-- Number of worker threads for nodelet manager -->
+
+  <group if="$(arg overwrite_robot_description)">
+    <param name="robot_description"
+      command="xacro $(find azure_kinect_ros_driver)/urdf/azure_kinect.urdf.xacro tf_prefix:=$(arg tf_prefix)" />
+    <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" />
+    <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
+  </group>
+
+  <group unless="$(arg overwrite_robot_description)">
+    <param name="azure_description"
+      command="xacro $(find azure_kinect_ros_driver)/urdf/azure_kinect.urdf.xacro tf_prefix:=$(arg tf_prefix)" />
+    <node name="joint_state_publisher_azure" pkg="joint_state_publisher" type="joint_state_publisher">
+      <remap from="robot_description" to="azure_description" />
+    </node>  
+    <node name="robot_state_publisher_azure" pkg="robot_state_publisher" type="robot_state_publisher">
+      <remap from="robot_description" to="azure_description" />
+    </node>
+  </group>
+
+  <!-- Add nodelet manager similar to SLAM launch file -->
+  <node pkg="nodelet" type="nodelet" name="$(arg nodelet_manager)" args="manager" output="screen">
+    <param name="num_worker_threads" value="$(arg num_worker_threads)" />
+  </node>
+
+  <!-- Add image rectification nodes similar to SLAM launch file -->
+  <node pkg="nodelet" type="nodelet" name="rectify_rgb"
+        args="load image_proc/rectify $(arg nodelet_manager) --no-bond"
+        respawn="true">
+    <remap from="image_mono"  to="/rgb_to_depth/image_raw" />
+    <remap from="image_rect"  to="/rgb_to_depth/image_rect" />
+  </node>
+
+  <node pkg="nodelet" type="nodelet" name="rectify_depth"
+        args="load image_proc/rectify $(arg nodelet_manager) --no-bond"
+        respawn="true">
+    <remap from="image_mono"  to="/depth/image_raw" />
+    <remap from="image_rect"  to="/depth/image_rect" />
+  </node>
+
+  <arg name="depth_enabled"           default="true" />           <!-- Enable or disable the depth camera -->
+  <arg name="depth_mode"              default="NFOV_UNBINNED" />  <!-- Set the depth camera mode -->
+  <arg name="depth_unit"              default="16UC1" />          <!-- Depth distance units -->
+  <arg name="color_enabled"           default="true" />           <!-- Enable or disable the color camera -->
+  <arg name="color_format"            default="bgra" />           <!-- The format of RGB camera -->
+  <arg name="color_resolution"        default="720P" />           <!-- Resolution at which to run the color camera -->
+  <arg name="fps"                     default="5" />              <!-- FPS to run both cameras at -->
+  <arg name="point_cloud"             default="true" />           <!-- Generate a point cloud from depth data -->
+  <arg name="rgb_point_cloud"         default="false" />          <!-- Colorize the point cloud -->
+  <arg name="point_cloud_in_depth_frame" default="false" />       <!-- RGB pointcloud frame -->
+  <arg name="required"                default="false" />          <!-- Terminate if node dies -->
+  <arg name="sensor_sn"               default="" />               <!-- Sensor serial number -->
+  <arg name="recording_file"          default="" />               <!-- Path to recording file -->
+  <arg name="recording_loop_enabled"  default="false" />          <!-- Loop recording -->
+  <arg name="body_tracking_enabled"   default="false" />          <!-- Publish joint positions -->
+  <arg name="body_tracking_smoothing_factor" default="0.0" />     <!-- Smoothing factor -->
+  <arg name="rescale_ir_to_mono8"     default="false" />          <!-- Rescale IR image -->
+  <arg name="ir_mono8_scaling_factor" default="1.0" />           <!-- IR scaling factor -->
+  <arg name="imu_rate_target"         default="100" />            <!-- IMU message rate -->
+  <arg name="wired_sync_mode"         default="0"/>               <!-- Wired sync mode -->
+  <arg name="subordinate_delay_off_master_usec" default="0"/>     <!-- Subordinate delay -->
+
+  <!-- Use nodelet version of driver similar to SLAM launch file -->
+  <node pkg="nodelet" type="nodelet" name="k4a_ros_bridge"
+        args="load Azure_Kinect_ROS_Driver/K4AROSBridgeNodelet $(arg nodelet_manager) --no-bond"
+        respawn="true">
+    <param name="depth_enabled"     type="bool"   value="$(arg depth_enabled)" />
+    <param name="depth_mode"        type="string" value="$(arg depth_mode)" />
+    <param name="depth_unit"        type="string" value="$(arg depth_unit)" />
+    <param name="color_enabled"     type="bool"   value="$(arg color_enabled)" />
+    <param name="color_format"      type="string" value="$(arg color_format)" />
+    <param name="color_resolution"  type="string" value="$(arg color_resolution)" />
+    <param name="fps"               type="int"    value="$(arg fps)" />
+    <param name="point_cloud"       type="bool"   value="$(arg point_cloud)" />
+    <param name="rgb_point_cloud"   type="bool"   value="$(arg rgb_point_cloud)" />
+    <param name="point_cloud_in_depth_frame" type="bool" value="$(arg point_cloud_in_depth_frame)" />
+    <param name="sensor_sn"         type="string" value="$(arg sensor_sn)" />
+    <param name="tf_prefix"         type="string" value="$(arg tf_prefix)" />
+    <param name="recording_file"    type="string" value="$(arg recording_file)" />
+    <param name="recording_loop_enabled" type="bool" value="$(arg recording_loop_enabled)" />
+    <param name="body_tracking_enabled" type="bool" value="$(arg body_tracking_enabled)" />
+    <param name="body_tracking_smoothing_factor" type="double" value="$(arg body_tracking_smoothing_factor)" />
+    <param name="rescale_ir_to_mono8" type="bool" value="$(arg rescale_ir_to_mono8)" />
+    <param name="ir_mono8_scaling_factor" type="double" value="$(arg ir_mono8_scaling_factor)" />
+    <param name="imu_rate_target" type="int" value="$(arg imu_rate_target)"/>
+    <param name="wired_sync_mode" type="int" value="$(arg wired_sync_mode)"/>
+    <param name="subordinate_delay_off_master_usec" type="int" value="$(arg subordinate_delay_off_master_usec)"/>
+  </node>
+ 
+  <!-- Keep the resize_depth node -->
+  <node pkg="depth_movement" type="resize_depth.py" name="resize_depth" output="screen">
+    <param name="~delay" value="3.0" />
+  </node>
+ 
+  <!-- RGBD sync node -->
+  <node pkg="rtabmap_sync" type="rgbd_sync" name="rgbd_sync" output="screen">
+    <remap from="rgb/image"         to="/k4a/rgb/image_raw"/>
+    <remap from="depth/image"       to="/k4a/depth/image_resized"/>
+    <remap from="rgb/camera_info"   to="k4a/rgb/camera_info"/>
+    <remap from="depth/camera_info" to="k4a/depth/camera_info"/>
+    <param name="approx_sync"       value="true" />
+    <param name="queue_size"        value="10" />
+  </node>
+ 
+  <!-- Static transform between camera_link and rgb_camera_link -->
+
+<node pkg="tf" type="static_transform_publisher" name="camera_to_rgb_transform"
+      args="0 0 0 0 0 0 $(arg tf_prefix)camera_base $(arg tf_prefix)rgb_camera_link 100" />
+
+	
+
+</launch>
