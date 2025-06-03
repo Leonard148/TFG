@@ -11,7 +11,7 @@ class SPIComNode:
        
         # Configurar SPI
         self.spi = spidev.SpiDev()
-        self.spi.open(0, 0)  # (bus, device)
+        self.spi.open(1, 0)  # (bus, device)
         self.spi.max_speed_hz = 500000  # Velocidad del bus
        
         rospy.loginfo("SPI Node Initialized")
