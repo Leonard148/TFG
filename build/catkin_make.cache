@@ -1,2 +1,2 @@
-Azure_Kinect_ROS_Driver:motor_control:spi_com:yolov7
+Azure_Kinect_ROS_Driver:barrier_map:depth_movement:motor_control:my_robot_description:rplidar_ros:rtabmap_ros/rtabmap_conversions:rtabmap_ros/rtabmap_costmap_plugins:rtabmap_ros/rtabmap_demos:rtabmap_ros/rtabmap_examples:rtabmap_ros/rtabmap_launch:rtabmap_ros/rtabmap_legacy:rtabmap_ros/rtabmap_msgs:rtabmap_ros/rtabmap_odom:rtabmap_ros/rtabmap_python:rtabmap_ros/rtabmap_ros:rtabmap_ros/rtabmap_rviz_plugins:rtabmap_ros/rtabmap_slam:rtabmap_ros/rtabmap_sync:rtabmap_ros/rtabmap_util:rtabmap_ros/rtabmap_viz
 -DCATKIN_DEVEL_PREFIX=/home/jetson/catkin_ws/devel -DCMAKE_INSTALL_PREFIX=/home/jetson/catkin_ws/install -G Unix Makefiles
