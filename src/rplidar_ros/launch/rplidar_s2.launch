@@ -1,6 +1,6 @@
 <launch>
   <arg name="channel_type" default="serial"/>
-  <arg name="serial_port" default="/dev/ttyUSB0"/>
+  <arg name="serial_port" default="/dev/ttyUSB1"/>
   <arg name="serial_baudrate" default="1000000"/>
   <arg name="frame_id" default="laser"/>
   <arg name="inverted" default="false"/>
