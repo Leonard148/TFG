@@ -1,4 +1,4 @@
-# Install script for directory: /home/jetson/catkin_ws/src/motor_control
+# Install script for directory: /home/jetson/catkin_ws/src/my_robot_description
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -38,21 +38,17 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/jetson/catkin_ws/build/motor_control/catkin_generated/installspace/motor_control.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/jetson/catkin_ws/build/my_robot_description/catkin_generated/installspace/my_robot_description.pc")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/motor_control/cmake" TYPE FILE FILES
-    "/home/jetson/catkin_ws/build/motor_control/catkin_generated/installspace/motor_controlConfig.cmake"
-    "/home/jetson/catkin_ws/build/motor_control/catkin_generated/installspace/motor_controlConfig-version.cmake"
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/my_robot_description/cmake" TYPE FILE FILES
+    "/home/jetson/catkin_ws/build/my_robot_description/catkin_generated/installspace/my_robot_descriptionConfig.cmake"
+    "/home/jetson/catkin_ws/build/my_robot_description/catkin_generated/installspace/my_robot_descriptionConfig-version.cmake"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/motor_control" TYPE FILE FILES "/home/jetson/catkin_ws/src/motor_control/package.xml")
-endif()
-
-if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/motor_control" TYPE PROGRAM FILES "/home/jetson/catkin_ws/build/motor_control/catkin_generated/installspace/motor_controller.py")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/my_robot_description" TYPE FILE FILES "/home/jetson/catkin_ws/src/my_robot_description/package.xml")
 endif()
 
